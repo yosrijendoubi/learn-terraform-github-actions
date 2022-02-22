@@ -29,10 +29,10 @@ terraform {
 provider "azurerm" {
   features {}
 
-  subscription_id = "564aa9d4-9031-49bc-9320-124b01c9d64c"
+  /*subscription_id = "564aa9d4-9031-49bc-9320-124b01c9d64c"
   client_id       = "19763837-18bb-462b-b3f1-38c208328417"
   client_secret   = "7VEmIQN3g6c_Z2d5litZY1Rb7_kjgFtxVq"
-  tenant_id       = "b3ad2679-9a3b-41ed-a05b-03cfd9a4d4b6"
+  tenant_id       = "b3ad2679-9a3b-41ed-a05b-03cfd9a4d4b6"*/
 }
 
 resource "azurerm_resource_group" "iotStorage"{
