@@ -6,13 +6,6 @@ terraform {
     }
   }
 
-  /*backend "azurerm" {
-    storage_account_name = "edgepfe"
-    container_name       = "edgeblob"
-    key                  = "terraform.tfstate"
-    resource_group_name  = "iotstorage"
-  }*/
-
   required_version = ">= 1.1.0"
 
   cloud {
