@@ -21,24 +21,24 @@ provider "azurerm" {
 
 }
 
-resource "azurerm_resource_group" "iotStorage"{
+resource "azurerm_resource_group" "pipelinerg"{
   name="pipelinerg"
   location="West Europe"
 }
 
 
-resource "azurerm_storage_account" "storagewas" {
-  name                     = "pipelinesa"
-  resource_group_name      = azurerm_resource_group.iotStorage.name
-  location                 = azurerm_resource_group.iotStorage.location
+resource "azurerm_storage_account" "pipelinesa" {
+  name                     = "pipelinesa2"
+  resource_group_name      = azurerm_resource_group.pipelinerg.name
+  location                 = azurerm_resource_group.pipelinerg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
   allow_blob_public_access = true
 }
 
 # Here we are creating a container in the storage account
-resource "azurerm_storage_container" "edge" {
-  name                  = "pipelinecontainer"
-  storage_account_name  = azurerm_storage_account.storagewas.name
+resource "azurerm_storage_container" "pipelinecontainer2" {
+  name                  = "pipelinecontainer2"
+  storage_account_name  = azurerm_storage_account.pipelinesa.name
   container_access_type = "private"
 }
