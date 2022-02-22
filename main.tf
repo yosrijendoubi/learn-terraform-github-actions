@@ -6,8 +6,6 @@ terraform {
     }
   }
 
-  required_version = ">= 1.1.0"
-
   backend "azurerm" {
     storage_account_name = "storagewas"
     container_name       = "edge"
@@ -20,6 +18,12 @@ terraform {
 
 provider "azurerm" {
   features {}
+
+  subscription_id = "564aa9d4-9031-49bc-9320-124b01c9d64c"
+  client_id       = "b3ad2679-9a3b-41ed-a05b-03cfd9a4d4b6"
+  client_secret   = "7VEmIQN3g6c_Z2d5litZY1Rb7_kjgFtxVq"
+  tenant_id       = "604f1a96-cbe8-43f8-abbf-f8eaf5d85730"
+  access_key      = "11FN5TUG5t/pEC3Plkf6UmQr6hHQFP2sc1VNnUb0CZsRiFm/wWPdwg0O8n5YjYnp11XBeOqv18G0a/NYyxcWQg=="
 }
 
 resource "azurerm_resource_group" "iotStorage"{
