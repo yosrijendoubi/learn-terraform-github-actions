@@ -35,9 +35,9 @@ func TestTerraformAzureStorageExample(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	// website::tag::3:: Run `terraform output` to get the values of output variables
-	resourceGroupName := terraform.Output(t, terraformOptions, "resource_group_name")
-	storageAccountName := terraform.Output(t, terraformOptions, "storage_account_name")
-	storageBlobContainerName := terraform.Output(t, terraformOptions, "storage_container_name")
+	resourceGroupName := "terratest-storage-rg-yosri"
+	storageAccountName := "storageyosri"
+	storageBlobContainerName := "container1"
 
 	// website::tag::4:: Verify storage account properties and ensure it matches the output.
 
