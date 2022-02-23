@@ -7,6 +7,30 @@ on:
   pull_request:
 
 jobs:
+  go-tests:
+    name: Unit Tests
+    env:
+      ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v1
+        with:
+          go-version: 1.14
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.0.1
+      - name: Download Go Modules
+        working-directory: ./IaaC/test
+        run: go mod download
+      - name: Run Go Tests
+        working-directory: ./IaaC/test
+        run: |
+          go test -v
+
   terraform:
     name: "Terraform"
     env:
