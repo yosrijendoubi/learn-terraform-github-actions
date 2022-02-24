@@ -33,7 +33,7 @@ jobs:
       - name: Run Go Tests
         working-directory: ./test
         run: |
-          go test verifyBackend_test.go  
+          go test -v verifyBackend_test.go  
 
   go-tests:
     name: Terraform Tests
