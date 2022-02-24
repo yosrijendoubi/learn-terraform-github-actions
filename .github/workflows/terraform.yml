@@ -36,7 +36,7 @@ jobs:
           go test verifyBackend.go  
 
   go-tests:
-    name: Unit Tests
+    name: Terraform Tests
     needs: backend-tests
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
