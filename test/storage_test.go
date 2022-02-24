@@ -20,7 +20,7 @@ func TestTerraformAzureStorageExample(t *testing.T) {
 	// website::tag::1:: Configure Terraform setting up a path to Terraform code.
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located
-		TerraformDir: "../stockage",
+		TerraformDir: "../",
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
@@ -35,9 +35,9 @@ func TestTerraformAzureStorageExample(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	// website::tag::3:: Run `terraform output` to get the values of output variables
-	resourceGroupName := "terratest-storage-rg-yosri"
-	storageAccountName := "storageyosri"
-	storageBlobContainerName := "container1"
+	resourceGroupName := "pipelinerg"
+	storageAccountName := "pipelinesa2"
+	storageBlobContainerName := "pipelinecontainer2"
 
 	// website::tag::4:: Verify storage account properties and ensure it matches the output.
 
