@@ -33,7 +33,7 @@ jobs:
       - name: Run Go Tests
         working-directory: ./test
         run: |
-          go test verifyBackend.go -v 
+          go test verifyBackend.go  
 
   go-tests:
     name: Unit Tests
